@@ -4,37 +4,6 @@
   <title>Google Login Gate</title>
   <meta name="google-signin-client_id" content="58254963801-5m2lfj8ol58g349g45kn96461qrnf3lv.apps.googleusercontent.com">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-</head>
-<body>
-  <h2>Sign in with Google</h2>
-  <!-- Google One-Tap or Sign-In button -->
-  <div id="g_id_onload"
-       data-client_id="58254963801-5m2lfj8ol58g349g45kn96461qrnf3lv.apps.googleusercontent.com"
-       data-context="signin"
-       data-callback="handleCredentialResponse"
-       data-auto_select="true"
-       data-itp_support="true">
-  </div>
-  <div class="g_id_signin" data-type="standard"></div>
-
-  <script>
-    function handleCredentialResponse(response) {
-      const idToken = response.credential;
-      const appScriptUrl = "https://script.google.com/macros/s/AKfycbw2lVNw0wapwKJppS4u6GyjzRj090htKZDt9cQk6paMrc6nlxRanX1D6vuIygyDgXFUAw/exec";
-
-      // ✅ Redirect to Apps Script with idToken
-      window.location.href = `${appScriptUrl}?credential=${idToken}`;
-    }
-  </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Google Login Gate</title>
-  <meta name="google-signin-client_id" content="58254963801-5m2lfj8ol58g349g45kn96461qrnf3lv.apps.googleusercontent.com">
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
