@@ -10,11 +10,11 @@
   <p id="status"></p>
 
   <script>
-    const allowedEmails = ['user1@gmail.com', 'user2@gmail.com'];
+    const allowedEmails = ['aarzeedeepriv@gmail.com', 'tantraeapolis1@gmail.com'];
 
     window.onload = () => {
       google.accounts.id.initialize({
-        client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com",
+        client_id: "58254963801-5m2lfj8ol58g349g45kn96461qrnf3lv.apps.googleusercontent.com",
         callback: handleCredentialResponse
       });
 
@@ -29,7 +29,7 @@
       const email = payload.email;
       if (allowedEmails.includes(email)) {
         // Redirect to your existing Apps Script web app
-        window.location.href = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
+        window.location.href = "https://script.google.com/macros/s/AKfycbxTLT4Dy1K6ZFHimtu3XSTUn-lftGNB6u-U42eybwDOF4w6Ou8tpzCspG1WHn0rqsmKLA/exec";
       } else {
         document.getElementById('status').textContent = "Access denied.";
       }
