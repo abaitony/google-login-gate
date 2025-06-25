@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Check</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <h2>Please sign in with Google:</h2>
+  <div id="g_id_signin"></div>
+  <p id="status"></p>
+
+  <script>
+    const allowedEmails = ['user1@gmail.com', 'user2@gmail.com'];
+
+    window.onload = () => {
+      google.accounts.id.initialize({
+        client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+      });
+
+      google.accounts.id.renderButton(
+        document.getElementById('g_id_signin'),
+        { theme: "outline", size: "large" }
+      );
+    };
+
+    function handleCredentialResponse(response) {
+      const payload = JSON.parse(atob(response.credential.split('.')[1]));
+      const email = payload.email;
+      if (allowedEmails.includes(email)) {
+        // Redirect to your existing Apps Script web app
+        window.location.href = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
+      } else {
+        document.getElementById('status').textContent = "Access denied.";
+      }
+    }
+  </script>
+</body>
+</html>
