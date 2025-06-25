@@ -29,7 +29,7 @@
       const email = payload.email;
       if (allowedEmails.includes(email)) {
         // Redirect to your existing Apps Script web app
-        window.location.href = "https://script.google.com/macros/s/AKfycbyUwdx_5ISk2sCS96HRK2MD_8U1jPranSiBGS7y5XizXVNGLPmZS254ukdHmmzx5tL1jQ/exec?credential=" + response.credential;
+        window.location.href = "https://script.google.com/macros/s/AKfycbx-XGloNgvBb7YpyqNvKboS8kwdVS0LwL1_oCYI73MpG3ZwiFsBSe00LlgcBPwoj6WRig/exec?credential=" + response.credential;
       } else {
         document.getElementById('status').textContent = "Access denied.";
       }
